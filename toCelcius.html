@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" onload="preventDefault()">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .container{
+            width: 300px;
+            height: 300px;
+            background: rgba(204, 204, 204, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 30px;
+        }
+        .client{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        input{
+            width: 150px;
+            height: 30px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: .5s ease;
+        }
+
+        input:hover{
+            box-shadow: 0 3px 3px #888;
+        }
+        button{
+            background: #c1c1c1;
+            width: 120px;
+            height: 30px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: .5s ease;
+        }
+        button:hover{
+            background: #ddd;
+            box-shadow: 0 3px 3px #888;
+        }
+
+        .data{
+            width: 200px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 30px;
+            background: #efefef;
+        }
+
+        #results{
+            color: #222;
+        }
+
+        span{
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="client">
+            <span>Fahrenheit to Celcius Changer</span>
+            <input type="text" id="input" placeholder="Fahrenheit" required maxlength="3"/>
+            <button class="btn">Change</button>
+        </div>
+        <div class="data">
+            <span id="results">Results</span>
+        </div>
+    </div>
+    <script>
+
+        var btn = document.querySelector('.btn');
+
+        btn.addEventListener('click', ()=>{
+            var input = document.getElementById('input').value;
+            if(!input){
+                alert("Insert fahrenheit value!");
+            } else {
+                document.getElementById('results').innerHTML = (document.getElementById('input').value - 32) * (5 / 9) + "*C";
+            }
+        });
+
+    </script>
+</body>
+</html>
